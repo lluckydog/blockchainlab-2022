@@ -20,3 +20,11 @@ func NewMerkleTree(data [][]byte) *MerkleTree {
 
 	return &mTree
 }
+
+// NewMerkleNode creates a new Merkle tree node
+// implement
+func NewMerkleNode(left, right *MerkleNode, data []byte) *MerkleNode {
+	node := MerkleNode{}
+
+	return &node
+}
