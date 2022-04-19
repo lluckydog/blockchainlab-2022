@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-var targetBits = uint(5)
+var targetBits = uint(8)
 
 // Block keeps block headers
 type Block struct {
