@@ -7,12 +7,15 @@ import (
 	"time"
 )
 
+var targetBits = uint(8)
+
 // Block keeps block headers
 type Block struct {
 	Timestamp     int64
 	Data          [][]byte
 	PrevBlockHash []byte
 	Hash          []byte
+	Bits          uint
 	Nonce         int
 }
 
@@ -39,10 +42,12 @@ func (b *Block) Serialize() []byte {
 func NewBlock(datas []string, prevBlockHash []byte) *Block {
 	blockData := [][]byte{}
 	for _, data := range datas {
-		blockData = append(blockData,[]byte(data))
-	} 
+		blockData = append(blockData, []byte(data))
+	}
 
-	block := &Block{time.Now().Unix(), blockData, prevBlockHash, []byte{}, 0}
+	block := &Block{time.Now().Unix(), blockData, prevBlockHash, []byte{}, targetBits, 0}
+	targetBits += 1
+
 	pow := NewProofOfWork(block)
 	nonce, hash := pow.Run()
 

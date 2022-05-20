@@ -2,27 +2,21 @@ package main
 
 import (
 	"math"
-	"math/big"
+	//"math/big"
 )
 
 var (
-	maxNonce   = math.MaxInt64
-	targetBits = 5
+	maxNonce = math.MaxInt64
 )
 
 // ProofOfWork represents a proof-of-work
 type ProofOfWork struct {
-	block  *Block
-	target *big.Int
+	block *Block
 }
 
 // NewProofOfWork builds and returns a ProofOfWork
 func NewProofOfWork(b *Block) *ProofOfWork {
-	target := big.NewInt(1)
-	target.Lsh(target, uint(256-targetBits))
-	targetBits += 1
-
-	pow := &ProofOfWork{b, target}
+	pow := &ProofOfWork{b}
 
 	return pow
 }
