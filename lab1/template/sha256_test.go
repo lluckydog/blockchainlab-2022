@@ -16,7 +16,7 @@ func TestSha256(t *testing.T) {
 		t,
 		"3a6fed5fc11392b3ee9f81caf017b48640d7458766a8eb0382899a605b41f2b9",
 		hex.EncodeToString(test_2561),
-		"Pass first test",
+		"Fail first test",
 	)
 
 	data2 := []byte("'blockchain with looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong data'")
@@ -27,7 +27,7 @@ func TestSha256(t *testing.T) {
 		t,
 		"95b96c86facc54de528a1d8956091fe13af19a7f4f59e3b90ff7e7005925e0e7",
 		hex.EncodeToString(test_2562),
-		"Pass second test",
+		"Fail second test",
 	)
 
 	data3 := []byte("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
@@ -38,6 +38,6 @@ func TestSha256(t *testing.T) {
 		t,
 		"8f416c797433c47747d12104b1801d96c852a99a9f033bef9056e61292630f8a",
 		hex.EncodeToString(test_2563),
-		"Pass special test",
+		"Fail special test",
 	)
 }

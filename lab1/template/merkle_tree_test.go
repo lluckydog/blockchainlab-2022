@@ -33,19 +33,19 @@ func TestNewMerkleNode(t *testing.T) {
 		t,
 		"64b04b718d8b7c5b6fd17f7ec221945c034cfce3be4118da33244966150c4bd4",
 		hex.EncodeToString(n5.Data),
-		"Level 1 hash 1 is correct",
+		"Level 1 hash 1 is incorrect",
 	)
 	assert.Equal(
 		t,
 		"08bd0d1426f87a78bfc2f0b13eccdf6f5b58dac6b37a7b9441c1a2fab415d76c",
 		hex.EncodeToString(n6.Data),
-		"Level 1 hash 2 is correct",
+		"Level 1 hash 2 is incorrect",
 	)
 	assert.Equal(
 		t,
 		"4e3e44e55926330ab6c31892f980f8bfd1a6e910ff1ebc3f778211377f35227e",
 		hex.EncodeToString(n7.Data),
-		"Root hash is correct",
+		"Root hash is incorrect",
 	)
 }
 
@@ -71,5 +71,5 @@ func TestNewMerkleTree(t *testing.T) {
 	rootHash := fmt.Sprintf("%x", n7.Data)
 	mTree := NewMerkleTree(data)
 
-	assert.Equal(t, rootHash, fmt.Sprintf("%x", mTree.RootNode.Data), "Merkle tree root hash is correct")
+	assert.Equal(t, rootHash, fmt.Sprintf("%x", mTree.RootNode.Data), "Merkle tree root hash is incorrect")
 }
